@@ -1,0 +1,151 @@
+/* 기본 설정 */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #f0f8ff, #add8e6);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #87ceeb;
+}
+
+/* 각 화면의 초기 상태 */
+#start-screen {
+    display: block; /* 처음에는 Start Screen 표시 */
+}
+
+#game-container {
+    display: none; /* Start Game 후 표시 */
+}
+
+#ranking-container {
+    display: none; /* 게임 종료 후 표시 */
+}
+
+/* 게임 보드 스타일 */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5x5 그리드 */
+    gap: 5px;
+    width: 90%; /* 화면 크기에 따라 유동적으로 */
+    max-width: 300px; /* 최대 크기 제한 */
+    margin: 20px auto;
+}
+
+/* 타일 스타일 */
+.tile {
+    background-color: #87ceeb;
+    color: white;
+    font-size: calc(16px + 1vw); /* 반응형 텍스트 크기 */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(60px + 1vw); /* 반응형 높이 */
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none; /* 텍스트 선택 방지 */
+    transition: background-color 0.3s ease;
+}
+
+.tile.selected {
+    background-color: #4682b4; /* 선택된 타일의 색상 */
+}
+
+/* 반응형 개선 */
+@media (max-width: 768px) {
+    #game-board {
+        gap: 3px; /* 작은 화면에서 간격 축소 */
+    }
+    .tile {
+        font-size: calc(14px + 1vw);
+        height: calc(50px + 1vw);
+    }
+    #ranking-container {
+        padding: 15px;
+    }
+
+    #ranking-list li {
+        font-size: 16px;
+    }
+
+    #ranking-container button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* 랭킹 컨테이너 스타일 */
+#ranking-container {
+    display: none; /* 기본적으로 숨김 */
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* 랭킹 제목 스타일 */
+#ranking-container h2 {
+    font-size: 24px;
+    color: #4682b4;
+    margin-bottom: 20px;
+}
+
+/* 랭킹 리스트 스타일 */
+#ranking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* 리스트를 왼쪽 정렬 */
+}
+
+#ranking-list li {
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: #add8e6;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 재시작 버튼 스타일 */
+#ranking-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#ranking-container button:hover {
+    background-color: #87ceeb;
+}
+
