@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Chain Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Number Chain Game</h1>
+        <input type="text" id="player-name" placeholder="Enter your name" />
+        <button id="start-button">Start Game</button>
+    </div>
+    <div id="game-container" style="display: none;">
+        <h1>Number Chain Game</h1>
+        <div id="timer">Time: 30s</div>
+        <div id="score">Score: 0</div>
+        <div id="game-board"></div>
+    </div>
+    <div id="ranking-container" style="display: none;">
+        <h2>Ranking</h2>
+        <ol id="ranking-list"></ol>
+        <button id="restart-button">Play Again</button>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>
